@@ -1,0 +1,10 @@
+[package]
+name = "ncpr"
+version = "0.1.0"
+authors = ["SparkTG"]
+
+[profile.dev]
+opt-level = 3
+
+[dependencies]
+csv = "*"
