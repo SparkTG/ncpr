@@ -65,7 +65,7 @@ fn deserialize(b1: u8, b2: u8) -> Option<(u8, String, String, u8)> {
         if b2 & 0b1111_1110 == 0 {
             "0".to_string()
         } else {
-            (1..8).filter(|&x| (b2 >> x) & 1 == 1).map(|x| x.to_string()).collect::<Vec<String>>().connect("#")
+            (1..8).filter(|&x| (b2 >> x) & 1 == 1).map(|x| x.to_string()).collect::<Vec<String>>().join("#")
         },
         if b2 & 1 == 0 {
             "D".to_string()
