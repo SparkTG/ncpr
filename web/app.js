@@ -65,7 +65,8 @@ var server = http.createServer(function(req, res) {
     }
 
     var result = {};
-    var numbers = parsedUrl.query['numbers'].split(',');
+    var query = parsedUrl.query['numbers'];  // multiple query string keys
+    var numbers = (typeof query === 'string') ? query.split(',') : query;
     for (var i = 0; i < numbers.length; i++) {
         if (numbers[i].match('^\\d{10}$') === null) {
             continue;
