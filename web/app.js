@@ -9,7 +9,8 @@ var DATA_DIR = '/opt/data/ncpr';
 var HEAD_MAP = {};
 var files = fs.readdirSync(DATA_DIR).filter(function(x){return x.match(/^\d{1,4}\.dat/);});
 for (var i = 0; i < files.length; i++) {
-    HEAD_MAP[+files[i].split('.')[0]] = fs.readFileSync(path.join(files[i]));
+    console.log("loading " + files[i]);
+    HEAD_MAP[+files[i].split('.')[0]] = fs.readFileSync(path.join(DATA_DIR, files[i]));
 }
 
 function deserialize(b1, b2) {
