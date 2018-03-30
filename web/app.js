@@ -61,7 +61,7 @@ function getNumberInfo(number) {
 
 var server = http.createServer(function(req, res) {
     var parsedUrl = url.parse(req.url, true);
-    if (!parsedUrl.query.hasOwnProperty('numbers')) {
+    if (!('numbers' in parsedUrl.query)) {
         return res.end('{}');
     }
 
