@@ -61,7 +61,7 @@ function getNumberInfo(number) {
 
 var server = http.createServer(function(req, res) {
     var parsedUrl = url.parse(req.url, true);
-    if (req.method !== 'GET' || parsedUrl.pathname !== '/api/v1/status' || !parsedUrl.query.hasOwnProperty('numbers')) {
+    if (!parsedUrl.query.hasOwnProperty('numbers')) {
         return res.end('{}');
     }
 
